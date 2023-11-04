@@ -1,27 +1,26 @@
-# React + TypeScript + Vite
+# Dark-Light Mode using React useContext
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
+This React project demonstrates how to create a Dark Mode / Light Mode toggle feature using the React Context API. The app allows users to switch between dark and light themes with a single click. It's a practical and engaging project for React learners looking to explore global state management.
 
-Currently, two official plugins are available:
+## Features
+- Toggle between dark and light modes effortlessly.
+- Manage the global theme state using React's Context API.
+- Learn about the power of state management in React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- React
+- React Context API
 
-## Expanding the ESLint configuration
+## Getting Started
+To run this project locally, follow these steps:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone this repository to your local machine.
 
-- Configure the top-level `parserOptions` property like this:
+2. `cdd 03 Dark-Light Mode in useContext ` 
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+3. Install dependencies using `npm install`.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+4. Start the development server with `npm run dev`.
+
+5. Open your web browser and visit [http://localhost:5173](http://localhost:5173) to see the app in action.
