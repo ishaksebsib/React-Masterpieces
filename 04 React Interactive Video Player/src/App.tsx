@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { useState } from "react";
+import ReactPlayer from "react-player";
+import Quiz from "react-quiz-component";
+import { quiz } from "./data/quiz";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isMuted,setIsMuted] = useState(false);
+  const [isPlaying,setIsPlaying] = useState(true);
+  const [quizTime,setQuizTime] = useState(false);
 
+  const toggleMute = () => {
+    setIsMuted(() => !isMuted)
+  }
+  const handleVideoProgress = (state:{ playedSeconds: number }) => {
+    const sec:number = state.playedSeconds
+    console.log(sec)
+    console.log(isPlaying)
+
+    if (sec > 3) {
+      setIsPlaying(false)
+      setQuizTime(true)
+    }
+  
+  }
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ReactPlayer url="https://www.youtube.com/watch?v=PKm61nrqpCA" controls muted={isMuted} playing={isPlaying}  onProgress={handleVideoProgress} />
+      <button onClick={toggleMute}>Mute</button>
+      <button onClick={toggleMute}>Mute</button>
+
+
+      {quizTime &&
+      <Quiz quiz={quiz} />
+      }
+
+
     </>
-  )
+  );
 }
 
-export default App
+export default App;
